@@ -30,6 +30,10 @@ async function run() {
 
   const booksToReturnSoon = loans.filter(({ deadline }) => deadline < deadlineThreshold);
 
+  if (!booksToReturnSoon.length) {
+    return;
+  }
+
   const emailTemplate = getEmailTemplate(booksToReturnSoon);
 
   await sendEmail({ text: emailTemplate, subject: config.email.subject });
