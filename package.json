@@ -1,5 +1,8 @@
 {
   "name": "library-helper",
+  "engines": {
+    "node": "12.x"
+  },
   "version": "0.1.0",
   "description": "",
   "bin": "index.js",
