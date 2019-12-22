@@ -1,10 +1,5 @@
-const chromium = require('chrome-aws-lambda');
+const puppeteer = require('puppeteer');
 
 module.exports = async function getBrowser() {
-  return chromium.puppeteer.launch({
-    args: chromium.args,
-    defaultViewport: chromium.defaultViewport,
-    executablePath: await chromium.executablePath,
-    headless: chromium.headless
-  });
+  return puppeteer.launch({ args: ['--no-sandbox'] });
 }

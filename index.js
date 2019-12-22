@@ -7,7 +7,9 @@ const renewLoans = require('./tasks/renew-loans');
 const signIn = require('./tasks/sign-in');
 const getEmailTemplate = require('./tasks/get-email-template');
 
-module.exports = async function run() {
+run();
+
+async function run() {
   const browser = await getBrowser();
 
   const page = await browser.newPage();
