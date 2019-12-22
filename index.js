@@ -12,14 +12,16 @@ run();
 async function run() {
   const browser = await getBrowser();
 
-  const page = await browser.newPage();
-
-  let loans;
+  let page = await browser.newPage(),
+      loans;
 
   try {
     await signIn(page);
     await renewLoans(page);
+    await page.close();
 
+    page = await browser.newPage();
+    await signIn(page);
     loans = await getLoans(page);
   } finally {
     await browser.close();

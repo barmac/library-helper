@@ -1,5 +1,10 @@
 const puppeteer = require('puppeteer');
 
 module.exports = async function getBrowser() {
-  return puppeteer.launch({ args: ['--no-sandbox'] });
+  return puppeteer.launch({ args: [
+    '--no-sandbox',
+    '--disable-setuid-sandbox',
+    '--disable-dev-shm-usage',
+    '--single-process'
+  ] });
 }
