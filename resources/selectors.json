@@ -1,0 +1,13 @@
+{
+  "LOGIN_PAGE_BUTTON": "a[title=\"Logowanie\"]",
+  "LOGIN_BUTTON": "input[value=\"Logowanie\"]",
+  "CARD_NUMBER_INPUT": "body > form:nth-child(6) > table:nth-child(12) > tbody > tr:nth-child(2) > td > center > table > tbody > tr:nth-child(1) > td:nth-child(2) > input[type=password]",
+  "PASSWORD_INPUT": "body > form:nth-child(6) > table:nth-child(12) > tbody > tr:nth-child(2) > td > center > table > tbody > tr:nth-child(2) > td:nth-child(2) > input[type=password]",
+  "ACCOUNT_VIEW": "a[title=\"Podgląd konta\"]",
+  "LOANED_BOOKS": "a[title=\"Wypożyczenia\"]",
+  "RENEWAL_SELECT": "input[name=\"renewall\"]",
+  "RENEW_BUTTON": "input[name=\"renewitems\"]",
+  "LOANS": "body > form > table.tableBackground > tbody > tr:nth-child(2) > td > table > tbody > tr:nth-child(n + 2)",
+  "BOOK_TITLE": "a[href]",
+  "DEADLINE": "td:nth-child(5) > a"
+}

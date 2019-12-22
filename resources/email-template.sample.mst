@@ -1,0 +1,11 @@
+Hi,
+
+These books should be returned soon:
+
+{{#books}}
+  * {{title}} ({{dateFormat deadline "D.MM.YYYY"}})
+{{/books}}
+
+Best,
+
+Library Helper
