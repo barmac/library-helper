@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const config = require('./util/config');
 const getBrowser = require('./util/browser');
 
@@ -18,10 +20,7 @@ async function run() {
   try {
     await signIn(page);
     await renewLoans(page);
-    await page.close();
 
-    page = await browser.newPage();
-    await signIn(page);
     loans = await getLoans(page);
   } finally {
     await browser.close();
