@@ -2,9 +2,10 @@
   "name": "library-helper",
   "version": "0.1.0",
   "description": "",
+  "bin": "index.js",
   "main": "index.js",
   "scripts": {
-    "test": "node ."
+    "start": "node ."
   },
   "keywords": [],
   "author": "Maciej Barelkowski <maciejbarel@gmail.com>",
