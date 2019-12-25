@@ -8,7 +8,11 @@ const selectors = require('../resources/selectors.json');
  */
 module.exports = async function getLoans(page) {
   await page.waitForSelector(selectors.LOANED_BOOKS);
-  await page.click(selectors.LOANED_BOOKS);
+
+  await Promise.all([
+    page.waitForNavigation(),
+    page.click(selectors.LOANED_BOOKS)
+  ]);
 
   await page.waitForSelector(selectors.LOANS);
   const loanElements = await page.$$(selectors.LOANS);

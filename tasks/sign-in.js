@@ -13,7 +13,10 @@ module.exports = async function signIn(page) {
 
   await page.waitForSelector(selectors.LOGIN_PAGE_BUTTON);
 
-  await page.click(selectors.LOGIN_PAGE_BUTTON);
+  await Promise.all([
+    page.waitForNavigation(),
+    page.click(selectors.LOGIN_PAGE_BUTTON)
+  ]);
 
   await page.waitForSelector(selectors.LOGIN_BUTTON)
 
@@ -21,5 +24,8 @@ module.exports = async function signIn(page) {
 
   await page.type(selectors.PASSWORD_INPUT, config.library.password);
 
-  await page.click(selectors.LOGIN_BUTTON);
+  await Promise.all([
+    page.waitForNavigation(),
+    page.click(selectors.LOGIN_BUTTON)
+  ]);
 }

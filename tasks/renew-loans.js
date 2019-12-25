@@ -8,7 +8,11 @@ const selectors = require('../resources/selectors.json');
  */
 module.exports = async function renewLoans(page) {
   await page.waitForSelector(selectors.ACCOUNT_VIEW);
-  await page.click(selectors.ACCOUNT_VIEW);
+
+  await Promise.all([
+    page.waitForNavigation(),
+    page.click(selectors.ACCOUNT_VIEW)
+  ]);
 
   await page.waitForSelector(selectors.LOANED_BOOKS);
   await page.click(selectors.LOANED_BOOKS);
