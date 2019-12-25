@@ -17,13 +17,9 @@ module.exports = async function signIn(page) {
 
   await page.waitForSelector(selectors.LOGIN_BUTTON)
 
-  await page.waitForSelector(selectors.CARD_NUMBER_INPUT);
-  await page.focus(selectors.CARD_NUMBER_INPUT);
-  await page.keyboard.type(config.library.login);
+  await page.type(selectors.CARD_NUMBER_INPUT, config.library.login);
 
-  await page.waitForSelector(selectors.PASSWORD_INPUT);
-  await page.focus(selectors.PASSWORD_INPUT);
-  await page.keyboard.type(config.library.password);
+  await page.type(selectors.PASSWORD_INPUT, config.library.password);
 
   await page.click(selectors.LOGIN_BUTTON);
 }
